@@ -259,21 +259,6 @@
 
   <script>
     (function () {
-      const CURRENCIES = ['USD', 'TRY', 'UAH', 'INR'];
-      const BASE_URL = 'https://www.nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/';
-      const CORS_PROXY = 'https://api.allorigins.win/get?url=';
-
-      function pad(n) { return String(n).padStart(2, '0'); }
-
-      function getTodayISO() {
-        const d = new Date();
-        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-      }
-
-      function buildApiUrl(currency, dateStr) {
-        const target = `${BASE_URL}?currencies=${currency}&date=${dateStr}`;
-        return `${CORS_PROXY}${encodeURIComponent(target)}`;
-      }
 
       const elLoading = document.getElementById('state-loading');
       const elError   = document.getElementById('state-error');
@@ -300,22 +285,10 @@
         elData.classList.remove('hidden');
       }
 
-      async function fetchOneCurrency(currency, dateStr) {
-        const res = await fetch(buildApiUrl(currency, dateStr));
+      async function fetchRates() {
+        const res = await fetch('./rates.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-        const wrapper = await res.json();
-        const json = JSON.parse(wrapper.contents);
-        if (!Array.isArray(json) || json.length === 0) {
-          throw new Error(`No rate data available for ${currency} on this date.`);
-        }
-        return json[0].currencies[0];
-      }
-
-      async function fetchRates(dateStr) {
-        const results = await Promise.all(
-          CURRENCIES.map(c => fetchOneCurrency(c, dateStr))
-        );
-        return results;
+        return res.json();
       }
 
       function normalise(c) {
@@ -357,11 +330,13 @@
       }
 
       async function init() {
-        const today = getTodayISO();
-        document.getElementById('display-date').textContent = today;
         showLoading();
         try {
-          const currencies = await fetchRates(today);
+          const { date, currencies } = await fetchRates();
+          if (!currencies || currencies.length === 0) {
+            throw new Error('Rates not yet available. Please check back later.');
+          }
+          document.getElementById('display-date').textContent = date;
           renderTable(currencies);
           showData();
         } catch (err) {
