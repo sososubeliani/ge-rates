@@ -260,7 +260,8 @@
   <script>
     (function () {
       const CURRENCIES = ['USD', 'TRY', 'UAH', 'INR'];
-      const BASE_URL = 'https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/';
+      const BASE_URL = 'https://www.nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/';
+      const CORS_PROXY = 'https://corsproxy.io/?';
 
       function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -270,7 +271,8 @@
       }
 
       function buildApiUrl(currency, dateStr) {
-        return `${BASE_URL}?currencies=${currency}&date=${dateStr}`;
+        const target = `${BASE_URL}?currencies=${currency}&date=${dateStr}`;
+        return `${CORS_PROXY}${encodeURIComponent(target)}`;
       }
 
       const elLoading = document.getElementById('state-loading');
