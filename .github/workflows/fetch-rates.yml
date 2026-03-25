@@ -2,8 +2,8 @@ name: Fetch NBG Rates
 
 on:
   schedule:
-    - cron: '0 7 * * 1-5'  # 7am UTC weekdays (NBG publishes ~10am Tbilisi time = 6am UTC)
-  workflow_dispatch:        # allow manual trigger from GitHub UI
+    - cron: '0 7 * * 1-5'  # 7am UTC weekdays (NBG publishes ~10am Tbilisi = 6am UTC)
+  workflow_dispatch:
 
 jobs:
   fetch-rates:
@@ -14,17 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright + Chromium
+        run: npx playwright install --with-deps chromium
+
       - name: Fetch rates from NBG
-        run: |
-          DATE=$(date -u +%Y-%m-%d)
-          CURRENCIES="USD TRY UAH INR"
-          RESULT="[]"
-          for C in $CURRENCIES; do
-            DATA=$(curl -s "https://www.nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/?currencies=$C&date=$DATE")
-            CURRENCY=$(echo "$DATA" | jq '.[0].currencies[0]')
-            RESULT=$(echo "$RESULT" | jq --argjson c "$CURRENCY" '. + [$c]')
-          done
-          echo "{\"date\":\"$DATE\",\"currencies\":$RESULT}" > rates.json
+        run: node fetch-rates.js
 
       - name: Commit rates
         run: |
