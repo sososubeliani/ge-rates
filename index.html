@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBG Exchange Rates</title>
+  <style>
+    :root {
+      --bg:        #f5f7fa;
+      --surface:   #ffffff;
+      --border:    #e2e8f0;
+      --text:      #1a202c;
+      --muted:     #718096;
+      --accent:    #2b6cb0;
+      --positive:  #276749;
+      --negative:  #c53030;
+      --radius:    8px;
+      --shadow:    0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 1.75rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* State panels */
+    .state-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 3rem 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .hidden { display: none !important; }
+
+    /* Spinner */
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff5f5;
+      color: var(--negative);
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #feb2b2;
+    }
+
+    #error-message {
+      color: var(--text);
+    }
+
+    button#retry-btn {
+      margin-top: 0.25rem;
+      padding: 0.5rem 1.25rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    button#retry-btn:hover { opacity: 0.85; }
+    button#retry-btn:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    th {
+      background: var(--bg);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #f7fafc; }
+
+    .currency-code {
+      font-family: ui-monospace, monospace;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .currency-name {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .rate-value {
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
+
+    .rate-value:hover { color: var(--accent); }
+
+    .rate-value.copied::after {
+      content: 'Copied!';
+      position: absolute;
+      left: 50%;
+      top: -1.75rem;
+      transform: translateX(-50%);
+      background: var(--text);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .change {
+      font-variant-numeric: tabular-nums;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .change.positive { color: var(--positive); }
+    .change.negative { color: var(--negative); }
+    .change.neutral  { color: var(--muted); }
+
+    .footnote {
+      margin-top: 0.75rem;
+      font-size: 0.775rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 1.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .currency-name { display: none; }
+      th:nth-child(2) { display: none; }
+      td, th { padding: 0.75rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Exchange Rates</h1>
+      <p class="subtitle">National Bank of Georgia &mdash; <span id="display-date"></span></p>
+    </header>
+
+    <main>
+      <div id="state-loading" class="state-panel" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Fetching rates&hellip;</p>
+      </div>
+
+      <div id="state-error" class="state-panel hidden" role="alert">
+        <div class="error-icon">!</div>
+        <p id="error-message"></p>
+        <button id="retry-btn">Retry</button>
+      </div>
+
+      <div id="state-data" class="hidden">
+        <table aria-label="Currency exchange rates against Georgian Lari">
+          <thead>
+            <tr>
+              <th>Currency</th>
+              <th>Name</th>
+              <th>Rate (GEL)</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody id="rates-body"></tbody>
+        </table>
+        <p class="footnote">All rates are per 1 unit of foreign currency against Georgian Lari (GEL).</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>Source: <a href="https://nbg.gov.ge" target="_blank" rel="noopener noreferrer">nbg.gov.ge</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const CURRENCIES = ['USD', 'TRY', 'UAH', 'INR'];
+      const BASE_URL = 'https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json/';
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function getTodayISO() {
+        const d = new Date();
+        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+      }
+
+      function buildApiUrl(currency, dateStr) {
+        return `${BASE_URL}?currencies=${currency}&date=${dateStr}`;
+      }
+
+      const elLoading = document.getElementById('state-loading');
+      const elError   = document.getElementById('state-error');
+      const elData    = document.getElementById('state-data');
+      const elErrMsg  = document.getElementById('error-message');
+      const elBody    = document.getElementById('rates-body');
+
+      function showLoading() {
+        elLoading.classList.remove('hidden');
+        elError.classList.add('hidden');
+        elData.classList.add('hidden');
+      }
+
+      function showError(msg) {
+        elErrMsg.textContent = msg;
+        elLoading.classList.add('hidden');
+        elError.classList.remove('hidden');
+        elData.classList.add('hidden');
+      }
+
+      function showData() {
+        elLoading.classList.add('hidden');
+        elError.classList.add('hidden');
+        elData.classList.remove('hidden');
+      }
+
+      async function fetchOneCurrency(currency, dateStr) {
+        const res = await fetch(buildApiUrl(currency, dateStr));
+        if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+        const json = await res.json();
+        if (!Array.isArray(json) || json.length === 0) {
+          throw new Error(`No rate data available for ${currency} on this date.`);
+        }
+        return json[0].currencies[0];
+      }
+
+      async function fetchRates(dateStr) {
+        const results = await Promise.all(
+          CURRENCIES.map(c => fetchOneCurrency(c, dateStr))
+        );
+        return results;
+      }
+
+      function normalise(c) {
+        return {
+          code: c.code,
+          name: c.name,
+          rate: c.rate / c.quantity,
+          diff: c.diff / c.quantity,
+        };
+      }
+
+      function renderTable(currencies) {
+        elBody.innerHTML = '';
+        const rows = currencies.filter(Boolean).map(normalise);
+
+        for (const c of rows) {
+          const isPos = c.diff > 0;
+          const isNeg = c.diff < 0;
+          const cls   = isPos ? 'positive' : isNeg ? 'negative' : 'neutral';
+          const arrow = isPos ? '▲' : isNeg ? '▼' : '–';
+          const sign  = isPos ? '+' : '';
+
+          const rateStr = c.rate.toFixed(4);
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><span class="currency-code">${c.code}</span></td>
+            <td class="currency-name">${c.name}</td>
+            <td class="rate-value" title="Click to copy">${rateStr}</td>
+            <td><span class="change ${cls}">${arrow} ${sign}${c.diff.toFixed(4)}</span></td>
+          `;
+          tr.querySelector('.rate-value').addEventListener('click', function () {
+            navigator.clipboard.writeText(rateStr).then(() => {
+              this.classList.add('copied');
+              setTimeout(() => this.classList.remove('copied'), 1200);
+            });
+          });
+          elBody.appendChild(tr);
+        }
+      }
+
+      async function init() {
+        const today = getTodayISO();
+        document.getElementById('display-date').textContent = today;
+        showLoading();
+        try {
+          const currencies = await fetchRates(today);
+          renderTable(currencies);
+          showData();
+        } catch (err) {
+          showError(err.message);
+        }
+      }
+
+      document.getElementById('retry-btn').addEventListener('click', init);
+      init();
+    })();
+  </script>
+</body>
+</html>
