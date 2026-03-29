@@ -2,7 +2,7 @@ name: Fetch NBG Rates
 
 on:
   schedule:
-    - cron: '0 7 * * 1-5'  # 7am UTC weekdays (NBG publishes ~10am Tbilisi = 6am UTC)
+    - cron: '0 4 * * 1-5'  # target 11am Tbilisi (UTC+4): schedule 4am UTC to offset ~3h GitHub Actions queue delay
   workflow_dispatch:
 
 jobs:
