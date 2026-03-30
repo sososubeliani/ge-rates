@@ -2,7 +2,7 @@ name: Fetch NBG Rates
 
 on:
   schedule:
-    - cron: '0 4 * * 1-5'  # target 11am Tbilisi (UTC+4): schedule 4am UTC to offset ~3h GitHub Actions queue delay
+    - cron: '0 8 * * 1-5'  # fallback safety net at 8am UTC (noon Tbilisi) — primary trigger is cron-job.org at 7am UTC via workflow_dispatch
   workflow_dispatch:
 
 jobs:
