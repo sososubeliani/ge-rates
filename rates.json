@@ -1,49 +1,49 @@
 {
-  "date": "2026-03-30",
+  "date": "2026-03-31",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.7025",
-      "diffFormated": "0.0041",
-      "rate": 2.7025,
+      "rateFormated": "2.6998",
+      "diffFormated": "0.0027",
+      "rate": 2.6998,
       "name": "აშშ დოლარი",
-      "diff": -0.0041,
-      "date": "2026-03-27T17:01:13.380Z",
-      "validFromDate": "2026-03-28T00:00:00.000Z"
+      "diff": -0.0027,
+      "date": "2026-03-30T17:01:06.688Z",
+      "validFromDate": "2026-03-31T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
-      "rateFormated": "0.0608",
-      "diffFormated": "0.0002",
-      "rate": 0.0608,
+      "rateFormated": "0.0607",
+      "diffFormated": "0.0001",
+      "rate": 0.0607,
       "name": "თურქული ლირა",
-      "diff": -0.0002,
-      "date": "2026-03-27T17:01:13.380Z",
-      "validFromDate": "2026-03-28T00:00:00.000Z"
+      "diff": -0.0001,
+      "date": "2026-03-30T17:01:06.688Z",
+      "validFromDate": "2026-03-31T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.6159",
+      "rateFormated": "0.6161",
       "diffFormated": "0.0002",
-      "rate": 0.6159,
+      "rate": 0.6161,
       "name": "უკრაინული გრივნა",
-      "diff": -0.0002,
-      "date": "2026-03-27T17:01:13.380Z",
-      "validFromDate": "2026-03-28T00:00:00.000Z"
+      "diff": 0.0002,
+      "date": "2026-03-30T17:01:06.688Z",
+      "validFromDate": "2026-03-31T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.8504",
-      "diffFormated": "0.0297",
-      "rate": 2.8504,
+      "rateFormated": "2.8476",
+      "diffFormated": "0.0028",
+      "rate": 2.8476,
       "name": "ინდური რუპია",
-      "diff": -0.0297,
-      "date": "2026-03-27T17:01:13.380Z",
-      "validFromDate": "2026-03-28T00:00:00.000Z"
+      "diff": -0.0028,
+      "date": "2026-03-30T17:01:06.688Z",
+      "validFromDate": "2026-03-31T00:00:00.000Z"
     }
   ]
 }
