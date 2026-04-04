@@ -1,49 +1,49 @@
 {
-  "date": "2026-04-03",
+  "date": "2026-04-04",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.6989",
-      "diffFormated": "0.0005",
-      "rate": 2.6989,
+      "rateFormated": "2.6981",
+      "diffFormated": "0.0008",
+      "rate": 2.6981,
       "name": "აშშ დოლარი",
-      "diff": -0.0005,
-      "date": "2026-04-02T17:01:14.813Z",
-      "validFromDate": "2026-04-03T00:00:00.000Z"
+      "diff": -0.0008,
+      "date": "2026-04-03T17:01:02.556Z",
+      "validFromDate": "2026-04-04T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
-      "rateFormated": "0.0607",
-      "diffFormated": "0.0000",
-      "rate": 0.0607,
+      "rateFormated": "0.0605",
+      "diffFormated": "0.0002",
+      "rate": 0.0605,
       "name": "თურქული ლირა",
-      "diff": 0,
-      "date": "2026-04-02T17:01:14.813Z",
-      "validFromDate": "2026-04-03T00:00:00.000Z"
+      "diff": -0.0002,
+      "date": "2026-04-03T17:01:02.556Z",
+      "validFromDate": "2026-04-04T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.6163",
-      "diffFormated": "0.0008",
-      "rate": 0.6163,
+      "rateFormated": "0.6170",
+      "diffFormated": "0.0007",
+      "rate": 0.617,
       "name": "უკრაინული გრივნა",
-      "diff": 0.0008,
-      "date": "2026-04-02T17:01:14.813Z",
-      "validFromDate": "2026-04-03T00:00:00.000Z"
+      "diff": 0.0007,
+      "date": "2026-04-03T17:01:02.556Z",
+      "validFromDate": "2026-04-04T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.8989",
-      "diffFormated": "0.0518",
-      "rate": 2.8989,
+      "rateFormated": "2.8980",
+      "diffFormated": "0.0009",
+      "rate": 2.898,
       "name": "ინდური რუპია",
-      "diff": 0.0518,
-      "date": "2026-04-02T17:01:14.813Z",
-      "validFromDate": "2026-04-03T00:00:00.000Z"
+      "diff": -0.0009,
+      "date": "2026-04-03T17:01:02.556Z",
+      "validFromDate": "2026-04-04T00:00:00.000Z"
     }
   ]
 }
