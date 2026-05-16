@@ -1,49 +1,49 @@
 {
-  "date": "2026-05-15",
+  "date": "2026-05-16",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.6802",
-      "diffFormated": "0.0016",
-      "rate": 2.6802,
+      "rateFormated": "2.6789",
+      "diffFormated": "0.0013",
+      "rate": 2.6789,
       "name": "აშშ დოლარი",
-      "diff": -0.0016,
-      "date": "2026-05-14T17:01:11.625Z",
-      "validFromDate": "2026-05-15T00:00:00.000Z"
+      "diff": -0.0013,
+      "date": "2026-05-15T17:01:14.163Z",
+      "validFromDate": "2026-05-16T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
-      "rateFormated": "0.0590",
-      "diffFormated": "0.0000",
-      "rate": 0.059,
+      "rateFormated": "0.0588",
+      "diffFormated": "0.0002",
+      "rate": 0.0588,
       "name": "თურქული ლირა",
-      "diff": 0,
-      "date": "2026-05-14T17:01:11.625Z",
-      "validFromDate": "2026-05-15T00:00:00.000Z"
+      "diff": -0.0002,
+      "date": "2026-05-15T17:01:14.163Z",
+      "validFromDate": "2026-05-16T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.6097",
-      "diffFormated": "0.0001",
-      "rate": 0.6097,
+      "rateFormated": "0.6076",
+      "diffFormated": "0.0021",
+      "rate": 0.6076,
       "name": "უკრაინული გრივნა",
-      "diff": -0.0001,
-      "date": "2026-05-14T17:01:11.625Z",
-      "validFromDate": "2026-05-15T00:00:00.000Z"
+      "diff": -0.0021,
+      "date": "2026-05-15T17:01:14.163Z",
+      "validFromDate": "2026-05-16T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.7987",
-      "diffFormated": "0.0033",
-      "rate": 2.7987,
+      "rateFormated": "2.7914",
+      "diffFormated": "0.0073",
+      "rate": 2.7914,
       "name": "ინდური რუპია",
-      "diff": -0.0033,
-      "date": "2026-05-14T17:01:11.625Z",
-      "validFromDate": "2026-05-15T00:00:00.000Z"
+      "diff": -0.0073,
+      "date": "2026-05-15T17:01:14.163Z",
+      "validFromDate": "2026-05-16T00:00:00.000Z"
     }
   ]
 }
