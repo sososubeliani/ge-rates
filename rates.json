@@ -1,49 +1,49 @@
 {
-  "date": "2026-08-21",
+  "date": "2026-08-24",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.6130",
-      "diffFormated": "0.0008",
-      "rate": 2.613,
+      "rateFormated": "2.6125",
+      "diffFormated": "0.0005",
+      "rate": 2.6125,
       "name": "აშშ დოლარი",
-      "diff": -0.0008,
-      "date": "2026-08-20T17:01:02.046Z",
-      "validFromDate": "2026-08-21T00:00:00.000Z"
+      "diff": -0.0005,
+      "date": "2026-08-21T17:01:04.128Z",
+      "validFromDate": "2026-08-22T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
-      "rateFormated": "0.0545",
-      "diffFormated": "0.0000",
-      "rate": 0.0545,
+      "rateFormated": "0.0544",
+      "diffFormated": "0.0001",
+      "rate": 0.0544,
       "name": "თურქული ლირა",
-      "diff": 0,
-      "date": "2026-08-20T17:01:02.046Z",
-      "validFromDate": "2026-08-21T00:00:00.000Z"
+      "diff": -0.0001,
+      "date": "2026-08-21T17:01:04.128Z",
+      "validFromDate": "2026-08-22T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.5853",
+      "rateFormated": "0.5847",
       "diffFormated": "0.0006",
-      "rate": 0.5853,
+      "rate": 0.5847,
       "name": "უკრაინული გრივნა",
-      "diff": 0.0006,
-      "date": "2026-08-20T17:01:02.046Z",
-      "validFromDate": "2026-08-21T00:00:00.000Z"
+      "diff": -0.0006,
+      "date": "2026-08-21T17:01:04.128Z",
+      "validFromDate": "2026-08-22T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.7301",
-      "diffFormated": "0.0006",
-      "rate": 2.7301,
+      "rateFormated": "2.7296",
+      "diffFormated": "0.0005",
+      "rate": 2.7296,
       "name": "ინდური რუპია",
-      "diff": 0.0006,
-      "date": "2026-08-20T17:01:02.046Z",
-      "validFromDate": "2026-08-21T00:00:00.000Z"
+      "diff": -0.0005,
+      "date": "2026-08-21T17:01:04.128Z",
+      "validFromDate": "2026-08-22T00:00:00.000Z"
     }
   ]
 }
