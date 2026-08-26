@@ -1,49 +1,49 @@
 {
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.6121",
-      "diffFormated": "0.0004",
-      "rate": 2.6121,
+      "rateFormated": "2.6153",
+      "diffFormated": "0.0032",
+      "rate": 2.6153,
       "name": "აშშ დოლარი",
-      "diff": -0.0004,
-      "date": "2026-08-24T17:01:10.574Z",
-      "validFromDate": "2026-08-25T00:00:00.000Z"
+      "diff": 0.0032,
+      "date": "2026-08-25T17:01:12.586Z",
+      "validFromDate": "2026-08-26T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
-      "rateFormated": "0.0543",
+      "rateFormated": "0.0544",
       "diffFormated": "0.0001",
-      "rate": 0.0543,
+      "rate": 0.0544,
       "name": "თურქული ლირა",
-      "diff": -0.0001,
-      "date": "2026-08-24T17:01:10.574Z",
-      "validFromDate": "2026-08-25T00:00:00.000Z"
+      "diff": 0.0001,
+      "date": "2026-08-25T17:01:12.586Z",
+      "validFromDate": "2026-08-26T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.5839",
-      "diffFormated": "0.0008",
-      "rate": 0.5839,
+      "rateFormated": "0.5851",
+      "diffFormated": "0.0012",
+      "rate": 0.5851,
       "name": "უკრაინული გრივნა",
-      "diff": -0.0008,
-      "date": "2026-08-24T17:01:10.574Z",
-      "validFromDate": "2026-08-25T00:00:00.000Z"
+      "diff": 0.0012,
+      "date": "2026-08-25T17:01:12.586Z",
+      "validFromDate": "2026-08-26T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.7282",
-      "diffFormated": "0.0014",
-      "rate": 2.7282,
+      "rateFormated": "2.7410",
+      "diffFormated": "0.0128",
+      "rate": 2.741,
       "name": "ინდური რუპია",
-      "diff": -0.0014,
-      "date": "2026-08-24T17:01:10.574Z",
-      "validFromDate": "2026-08-25T00:00:00.000Z"
+      "diff": 0.0128,
+      "date": "2026-08-25T17:01:12.586Z",
+      "validFromDate": "2026-08-26T00:00:00.000Z"
     }
   ]
 }
