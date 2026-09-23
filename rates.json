@@ -1,49 +1,49 @@
 {
-  "date": "2026-09-22",
+  "date": "2026-09-23",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.6074",
-      "diffFormated": "0.0003",
-      "rate": 2.6074,
+      "rateFormated": "2.6104",
+      "diffFormated": "0.0030",
+      "rate": 2.6104,
       "name": "აშშ დოლარი",
-      "diff": 0.0003,
-      "date": "2026-09-21T17:01:08.878Z",
-      "validFromDate": "2026-09-22T00:00:00.000Z"
+      "diff": 0.003,
+      "date": "2026-09-22T17:01:11.490Z",
+      "validFromDate": "2026-09-23T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
-      "rateFormated": "0.0534",
-      "diffFormated": "0.0000",
-      "rate": 0.0534,
+      "rateFormated": "0.0535",
+      "diffFormated": "0.0001",
+      "rate": 0.0535,
       "name": "თურქული ლირა",
-      "diff": 0,
-      "date": "2026-09-21T17:01:08.878Z",
-      "validFromDate": "2026-09-22T00:00:00.000Z"
+      "diff": 0.0001,
+      "date": "2026-09-22T17:01:11.490Z",
+      "validFromDate": "2026-09-23T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.5826",
-      "diffFormated": "0.0008",
-      "rate": 0.5826,
+      "rateFormated": "0.5825",
+      "diffFormated": "0.0001",
+      "rate": 0.5825,
       "name": "უკრაინული გრივნა",
-      "diff": -0.0008,
-      "date": "2026-09-21T17:01:08.878Z",
-      "validFromDate": "2026-09-22T00:00:00.000Z"
+      "diff": -0.0001,
+      "date": "2026-09-22T17:01:11.490Z",
+      "validFromDate": "2026-09-23T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.7212",
-      "diffFormated": "0.0020",
-      "rate": 2.7212,
+      "rateFormated": "2.7307",
+      "diffFormated": "0.0095",
+      "rate": 2.7307,
       "name": "ინდური რუპია",
-      "diff": 0.002,
-      "date": "2026-09-21T17:01:08.878Z",
-      "validFromDate": "2026-09-22T00:00:00.000Z"
+      "diff": 0.0095,
+      "date": "2026-09-22T17:01:11.490Z",
+      "validFromDate": "2026-09-23T00:00:00.000Z"
     }
   ]
 }
