@@ -1,16 +1,16 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.5978",
-      "diffFormated": "0.0001",
-      "rate": 2.5978,
+      "rateFormated": "2.5976",
+      "diffFormated": "0.0002",
+      "rate": 2.5976,
       "name": "აშშ დოლარი",
-      "diff": -0.0001,
-      "date": "2026-10-20T17:01:10.722Z",
-      "validFromDate": "2026-10-21T00:00:00.000Z"
+      "diff": -0.0002,
+      "date": "2026-10-21T17:01:13.285Z",
+      "validFromDate": "2026-10-22T00:00:00.000Z"
     },
     {
       "code": "TRY",
@@ -20,30 +20,30 @@
       "rate": 0.0524,
       "name": "თურქული ლირა",
       "diff": 0,
-      "date": "2026-10-20T17:01:10.722Z",
-      "validFromDate": "2026-10-21T00:00:00.000Z"
+      "date": "2026-10-21T17:01:13.285Z",
+      "validFromDate": "2026-10-22T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.5763",
-      "diffFormated": "0.0005",
-      "rate": 0.5763,
+      "rateFormated": "0.5767",
+      "diffFormated": "0.0004",
+      "rate": 0.5767,
       "name": "უკრაინული გრივნა",
-      "diff": -0.0005,
-      "date": "2026-10-20T17:01:10.722Z",
-      "validFromDate": "2026-10-21T00:00:00.000Z"
+      "diff": 0.0004,
+      "date": "2026-10-21T17:01:13.285Z",
+      "validFromDate": "2026-10-22T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.7366",
-      "diffFormated": "0.0002",
-      "rate": 2.7366,
+      "rateFormated": "2.7497",
+      "diffFormated": "0.0131",
+      "rate": 2.7497,
       "name": "ინდური რუპია",
-      "diff": -0.0002,
-      "date": "2026-10-20T17:01:10.722Z",
-      "validFromDate": "2026-10-21T00:00:00.000Z"
+      "diff": 0.0131,
+      "date": "2026-10-21T17:01:13.285Z",
+      "validFromDate": "2026-10-22T00:00:00.000Z"
     }
   ]
 }
