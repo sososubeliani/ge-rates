@@ -1,49 +1,49 @@
 {
-  "date": "2026-10-28",
+  "date": "2026-10-29",
   "currencies": [
     {
       "code": "USD",
       "quantity": 1,
-      "rateFormated": "2.5960",
-      "diffFormated": "0.0006",
-      "rate": 2.596,
+      "rateFormated": "2.5957",
+      "diffFormated": "0.0003",
+      "rate": 2.5957,
       "name": "აშშ დოლარი",
-      "diff": -0.0006,
-      "date": "2026-10-27T17:01:10.417Z",
-      "validFromDate": "2026-10-28T00:00:00.000Z"
+      "diff": -0.0003,
+      "date": "2026-10-28T17:01:12.527Z",
+      "validFromDate": "2026-10-29T00:00:00.000Z"
     },
     {
       "code": "TRY",
       "quantity": 1,
       "rateFormated": "0.0521",
-      "diffFormated": "0.0001",
+      "diffFormated": "0.0000",
       "rate": 0.0521,
       "name": "თურქული ლირა",
-      "diff": -0.0001,
-      "date": "2026-10-27T17:01:10.417Z",
-      "validFromDate": "2026-10-28T00:00:00.000Z"
+      "diff": 0,
+      "date": "2026-10-28T17:01:12.527Z",
+      "validFromDate": "2026-10-29T00:00:00.000Z"
     },
     {
       "code": "UAH",
       "quantity": 10,
-      "rateFormated": "0.5694",
-      "diffFormated": "0.0004",
-      "rate": 0.5694,
+      "rateFormated": "0.5693",
+      "diffFormated": "0.0001",
+      "rate": 0.5693,
       "name": "უკრაინული გრივნა",
-      "diff": -0.0004,
-      "date": "2026-10-27T17:01:10.417Z",
-      "validFromDate": "2026-10-28T00:00:00.000Z"
+      "diff": -0.0001,
+      "date": "2026-10-28T17:01:12.527Z",
+      "validFromDate": "2026-10-29T00:00:00.000Z"
     },
     {
       "code": "INR",
       "quantity": 100,
-      "rateFormated": "2.7292",
-      "diffFormated": "0.0014",
-      "rate": 2.7292,
+      "rateFormated": "2.7257",
+      "diffFormated": "0.0035",
+      "rate": 2.7257,
       "name": "ინდური რუპია",
-      "diff": 0.0014,
-      "date": "2026-10-27T17:01:10.417Z",
-      "validFromDate": "2026-10-28T00:00:00.000Z"
+      "diff": -0.0035,
+      "date": "2026-10-28T17:01:12.527Z",
+      "validFromDate": "2026-10-29T00:00:00.000Z"
     }
   ]
 }
